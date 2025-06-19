@@ -1,0 +1,170 @@
+<!-- Save as: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Agency - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .background-slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .background-slider img.active {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 25px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        h2 {
+            text-align: center;
+            color: #c62828;
+            margin-bottom: 20px;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 6px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+            box-sizing: border-box;
+            transition: border 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #f57c00;
+            outline: none;
+            box-shadow: 0 0 5px rgba(245, 124, 0, 0.5);
+        }
+
+        button {
+            background: linear-gradient(to right, #d32f2f, #f44336);
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #b71c1c, #e53935);
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-slider">
+        <img src="2.avif" class="active">
+        <img src="1.avif">
+        <img src="3.avif">
+        <img src="4.avif">
+        <img src="5.avif>
+        <img src="6.avif">
+        <img src="7.avif">
+        <img src="8.avif">
+        <img src="9.avif">
+        <img src="10avif">
+    </div>
+
+    <div class="container">
+        <h2>Blood Donation Registration</h2>
+        <form action="save.php" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="bloodgroup">Blood Group</label>
+            <select id="bloodgroup" name="bloodgroup" required>
+                <option value="">-- Select --</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="lastdonationdate">Last Donation Date</label>
+            <input type="date" id="lastdonationdate" name="lastdonationdate" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll(".background-slider img");
+        let current = 0;
+
+        setInterval(() => {
+            images[current].classList.remove("active");
+            current = (current + 1) % images.length;
+            images[current].classList.add("active");
+        }, 5000); // 5 seconds
+    </script>
+</body>
+</html>
