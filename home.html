@@ -1,0 +1,167 @@
+<!-- Save as: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Agency - Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .background-slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+    }
+
+    .background-slider img.active {
+      opacity: 1;
+    }
+
+    .navbar {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #c62828;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c62828;
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 17px;
+      color: #444;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #c62828;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #b71c1c;
+}
+  </style>
+</head>
+<body>
+
+  <div class="background-slider">
+    <img src="2.avif" class="active">
+    <img src="1.avif">
+    <img src="3.avif">
+    <img src="4.avif">
+    <img src="5.avif">
+    <img src="6.avif">
+    <img src="7.avif">
+    <img src="8.avif">
+    <img src="9.avif">
+    <img src="10.avif">
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blood_agency.html">Blood Agency</a></li>
+      <li><a href="search_doctor.html">Search Doctor</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+    </ul>
+  </nav>
+
+ <div class="container" id="formContainer">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <h1>Welcome to Blood Agency & Hospital Management System</h1>
+    <p>
+      Our Hospital Management System is integrated with a dedicated Blood Agency platform to streamline medical services and save lives more efficiently.
+      We provide patients, doctors, and hospital staff with a modern digital system for managing appointments, accessing medical records, and organizing medical resources.
+      <br><br>
+      The Blood Agency service ensures quick and reliable access to blood donors and recipients. Whether you are looking to donate or need urgent blood, our platform connects you to the nearest blood banks and verified donors instantly.
+      <br><br>
+      Together, our mission is to enhance healthcare delivery by providing timely support, reducing paperwork, and enabling seamless communication across departments.
+      Join us in revolutionizing healthcare and becoming a part of a life-saving network.
+    </p>
+  </div>
+
+ <script>
+    const images = document.querySelectorAll(".background-slider img");
+    let current = 0;
+
+    setInterval(() => {
+        images[current].classList.remove("active");
+        current = (current + 1) % images.length;
+        images[current].classList.add("active");
+    }, 5000); // 5 seconds
+
+    function closeForm() {
+        document.getElementById("formContainer").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

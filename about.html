@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Blood Donation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fceabb, #f8b500);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #b71c1c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #c62828;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #c62828;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: right;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .about-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section h2 {
+            font-size: 28px;
+            color: #d32f2f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .mission {
+            background: #fbe9e7;
+            padding: 20px;
+            border-left: 6px solid #e53935;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        footer {
+            background: #c62828;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-section {
+                margin: 30px 20px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>About Blood Donation</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blood_agency.html">Blood Agency</a></li>
+        <li><a href="search_doctor.html">Search Doctor</a></li>
+        <li><a href="appointment.html">Appointment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+    </ul>
+</nav>
+
+<div class="about-section">
+    <h2>Why Blood Donation Matters</h2>
+    <p>
+        Every year, millions of people need blood transfusions for surgeries, accidents, cancer treatment, and chronic illnesses. Blood donation is a simple, lifesaving act that takes less than an hour but can save up to three lives.
+    </p>
+    <p>
+        Our platform connects donors with patients and healthcare institutions in need. We aim to create a trusted, efficient network where blood can be quickly accessed during emergencies.
+    </p>
+
+    <div class="mission">
+        <h3>Our Mission</h3>
+        <p>
+            To ensure no life is lost due to a lack of blood. We strive to raise awareness, encourage voluntary donation, and build a bridge between generous donors and critical patients.
+        </p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Blood Donation Agency | All Rights Reserved
+</footer>
+
+</body>
+</html>
